@@ -1,0 +1,31 @@
+Business Nature: A business establishment offers secured loans to its customers, with items of personal property used as collateral. The business establishment has two types of transactions: the loan transaction, and payment transaction.
+
+GETTING THE LOAN .:
+Everytime a customer makes a loan transaction with the establishment, the following details is recorded:
+
+1.  customer name
+2.  customer address
+3.  customer contact number
+4.  type of jewelry used as collateral - The establishment only accepts rings, necklaces, bracelets, and earrings.
+5.  quality of the jewelry - The establishment only accepts 10k, 18k, and 21k jewelries. 
+6.  weight of the jewelry
+7.  discount - Sometimes a jewelry contains crystal stones that adds up to the weight of the jewelry, this should be deducted from     its weight.
+8.  other details - The jewelry condition should be described by the person who attended the transaction. Other details may include       descriptions about scratches, broken locks, missing stones, etc.
+9.  actual value of the jewelry
+10. amount loaned by the customer
+11. and the date of transaction
+
+After this transaction, a unique 8 digit number is assigned to the jewelry.
+
+PAYING BACK THE LOAN .:
+On the other hand, for the payment transaction, the customer should present a receipt that shows information about their loan. Customers who cannot prove that they had a transaction with the establishment are usually not entertained unless the person who attended the transaction takes time to look on to the pile of records where he/she kept the loans information with. During a payment transaction, the following information is recorded:
+
+1. customer name
+2. customer address
+3. customer contact number
+4. unique 8 digit number of the jewelry deposited by the customer
+5. the amount borrowed by the customer
+6. the accumulated amount owed by the customer at the time of the payment transaction
+7. the amount paid by the customer
+8. their balance
+9. and the date of transaction
