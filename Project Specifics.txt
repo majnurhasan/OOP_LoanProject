@@ -3,29 +3,59 @@ Business Nature: A business establishment offers secured loans to its customers,
 GETTING THE LOAN .:
 Everytime a customer makes a loan transaction with the establishment, the following details is recorded:
 
-1.  customer name
-2.  customer address
+1.  customer name 
+TEXTFIELD - STRING
+2.  customer address 
+TEXTFIELD - STRING 
 3.  customer contact number
+TEXTFIELD (FORMAT PROOF) - STRING
 4.  type of jewelry used as collateral - The establishment only accepts rings, necklaces, bracelets, and earrings.
+COMBOBOX - ENUM STRING
 5.  quality of the jewelry - The establishment only accepts 10k, 18k, and 21k jewelries. 
+COMBOBOX - ENUM STRING
 6.  weight of the jewelry
-7.  discount - Sometimes a jewelry contains crystal stones that adds up to the weight of the jewelry, this should be deducted from     its weight.
-8.  other details - The jewelry condition should be described by the person who attended the transaction. Other details may include       descriptions about scratches, broken locks, missing stones, etc.
+TEXTFIELD - INT
+7.  discount - Sometimes a jewelry contains crystal stones that adds up to the weight of the jewelry, this should be deducted from its weight.
+TEXTFIELD - STRING TO DOUBLE
+8.  other details - The jewelry condition should be described by the person who attended the transaction. Other details may include descriptions about scratches, broken locks, missing stones, etc.
+TEXTFIELD - STRING
 9.  actual value of the jewelry
+TEXTFIELD - STRING TO DOUBLE
 10. amount loaned by the customer
+TEXTFIELD - STRING TO DOUBLE
 11. and the date of transaction
+TEXTFIELD OR DATETIME - DATETIME
 
 After this transaction, a unique 8 digit number is assigned to the jewelry.
+INT
 
 PAYING BACK THE LOAN .:
 On the other hand, for the payment transaction, the customer should present a receipt that shows information about their loan. Customers who cannot prove that they had a transaction with the establishment are usually not entertained unless the person who attended the transaction takes time to look on to the pile of records where he/she kept the loans information with. During a payment transaction, the following information is recorded:
 
 1. customer name
+TEXTFIELD - STRING
 2. customer address
+TEXTFIELD - STRING 
 3. customer contact number
+TEXTFIELD (FORMAT PROOF) - STRING
 4. unique 8 digit number of the jewelry deposited by the customer
+INT
 5. the amount borrowed by the customer
+TEXTFIELD - STRING TO DOUBLE
 6. the accumulated amount owed by the customer at the time of the payment transaction
+TEXTFIELD - STRING TO DOUBLE
 7. the amount paid by the customer
+TEXTFIELD - STRING TO DOUBLE
 8. their balance
+TEXTFIELD - STRING TO DOUBLE
 9. and the date of transaction
+TEXTFIELD OR DATETIME - DATETIME
+
+Classes:
+Person
+Jewelry
+Loan
+Transaction
+
+Table Management:
+Person surrenders Jewelry to have Loans and Transactions
