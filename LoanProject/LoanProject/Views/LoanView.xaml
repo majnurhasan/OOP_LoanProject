@@ -1,0 +1,65 @@
+﻿<Window x:Class="LoanProject.Views.LoanView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LoanProject.Views"
+        mc:Ignorable="d"
+        Title="Loan View" Height="760" Width="500" DataContext="{Binding Path=TransactionModule, Source={StaticResource Locator}}"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Loan Transaction" HorizontalAlignment="Center" FontStyle="Normal" FontSize="25"></TextBlock>
+            <Border Width="450" Margin="5" BorderBrush="White" BorderThickness="2" Height="685">
+                <StackPanel Margin="5">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5,5,5,20">
+                        <TextBlock Text="Jewelry Type: " HorizontalAlignment="Center" FontSize="20" Margin="1,10,5,1"></TextBlock>
+                        <ComboBox ItemsSource="{Binding Path=JewelryTypes}" SelectedItem="{Binding Path=SelectedJewelryType}"></ComboBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5,5,5,20">
+                        <TextBlock Text="Jewelry Quality: " HorizontalAlignment="Center" FontSize="20" Margin="1,10,5,1"></TextBlock>
+                        <ComboBox ItemsSource="{Binding Path=JewelryQualities}" SelectedItem="{Binding Path=SelectedJewelryQuality}"></ComboBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20,5,5,20">
+                        <TextBlock Text="Jewelry Weight: " HorizontalAlignment="Center" FontSize="20" Margin="1,10,5,1"></TextBlock>
+                        <TextBox Margin="15,1,1,1" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Text="{Binding Path=InputJewelryWeight}" FontSize="20" Width="210"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20,5,5,20">
+                        <TextBlock Text="Added Weight: " HorizontalAlignment="Center" FontSize="20" Margin="1,10,5,1"></TextBlock>
+                        <TextBox Margin="23,1,1,1" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Text="{Binding Path=InputJewelryDiscount}" FontSize="20" Width="210"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20,5,5,20">
+                        <TextBlock Text="Jewelry Value: " HorizontalAlignment="Center" FontSize="20" Margin="1,10,5,1"></TextBlock>
+                        <TextBox Margin="30,1,1,1" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Text="{Binding Path=InputJewelryValue}" FontSize="20" Width="210"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20,5,5,20">
+                        <TextBlock Text="Other Details: " HorizontalAlignment="Center" FontSize="20" Margin="1,10,5,1"></TextBlock>
+                        <TextBox Margin="34,1,1,1" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Text="{Binding Path=InputJewelryOtherDetails}" FontSize="20" Width="210"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20,5,5,20">
+                        <TextBlock Text="Customer Name:" HorizontalAlignment="Center" FontSize="20" Margin="1,10,5,1"></TextBlock>
+                        <TextBox Margin="13,1,1,1" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Text="{Binding Path=InputCustomerName}" FontSize="20" Width="210"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20,5,5,20">
+                        <TextBlock Text="Contact Number: " HorizontalAlignment="Center" FontSize="20" Margin="1,10,5,1"></TextBlock>
+                        <TextBox Margin="4,1,1,1" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Text="{Binding Path=InputCustomerContactNumber}" FontSize="20" Width="210"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20,5,5,20">
+                        <TextBlock Text="Address: " HorizontalAlignment="Center" FontSize="20" Margin="1,10,5,1"></TextBlock>
+                        <TextBox Margin="83,1,1,1" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Text="{Binding Path=InputCustomerAddress}" FontSize="20" Width="210"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20,5,5,20">
+                        <TextBlock Text="Loan Value: " HorizontalAlignment="Center" FontSize="20" Margin="1,10,5,1"></TextBlock>
+                        <TextBox Margin="56,1,1,1" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Text="{Binding Path=InputLoanValue}" FontSize="20" Width="210"></TextBox>
+                    </StackPanel>
+                    <Button Content="Submit" Width="135" FontSize="20" Margin="1" Command="{Binding Path=AddLoanTransactionCommand}"></Button>
+                    
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </Grid>
+</Window>

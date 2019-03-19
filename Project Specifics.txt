@@ -14,7 +14,7 @@ COMBOBOX - ENUM STRING
 5.  quality of the jewelry - The establishment only accepts 10k, 18k, and 21k jewelries. 
 COMBOBOX - ENUM STRING
 6.  weight of the jewelry
-TEXTFIELD - INT
+TEXTFIELD - STRING TO DOUBLE
 7.  discount - Sometimes a jewelry contains crystal stones that adds up to the weight of the jewelry, this should be deducted from its weight.
 TEXTFIELD - STRING TO DOUBLE
 8.  other details - The jewelry condition should be described by the person who attended the transaction. Other details may include descriptions about scratches, broken locks, missing stones, etc.
@@ -52,10 +52,35 @@ TEXTFIELD - STRING TO DOUBLE
 TEXTFIELD OR DATETIME - DATETIME
 
 Classes:
-Person
 Jewelry
-Loan
-Transaction
+	JewelryID (string - formatabble) / PASSIVE
+	JewelryType (enum)
+	JewelryQuality (enum)
+	JewelryWeight (double)
+	JewelryDiscount (double)
+	JewelryOtherDetails (string)
+	JewelryValue (double)
+Customer
+	CustomerName (string)
+	CustomerAddress (string)
+	CustomerContactNumber (string - formatabble)
+Transaction 
+	LoanValue (double)
+
+	TransactionDate (datetime) / PASSIVE
+	TransactionID / PASSIVE
+
+	Loan
+		CUSTOMERDETAILS
+		JEWELRYDETAILS
+
+	Payback
+		CUSTOMERDETAILS
+		JewelryID 
+		FullInterestValue (double)
+		Balance (double)
+	
+	
 
 Table Management:
 Person surrenders Jewelry to have Loans and Transactions

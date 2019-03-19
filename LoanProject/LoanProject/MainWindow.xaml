@@ -5,8 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LoanProject"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Loan Service: Main Menu" Height="210" Width="300" DataContext="{Binding Path=OpenModule, Source={StaticResource Locator}}"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto" WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <StackPanel>
+
+            <Button Margin="10" Height="40" Width="230" FontWeight="Bold" Content="View Transactions" Command="{Binding Path=ShowListOfTransactionsViewCommand}" FontSize="22"></Button>
+            <Button Margin="10" Height="40" Width="100" FontWeight="Bold" Content="Loan" Command="{Binding Path=ShowLoanViewCommand}" FontSize="22"></Button>
+            <Button Margin="10" Height="40" Width="100" FontWeight="Bold" Content="Pay" Command="{Binding Path=ShowPaybackViewCommand}" FontSize="22"></Button>
+            
+        </StackPanel>
     </Grid>
 </Window>

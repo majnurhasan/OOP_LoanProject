@@ -1,0 +1,56 @@
+﻿<Window x:Class="LoanProject.Views.PaybackView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LoanProject.Views"
+        mc:Ignorable="d"
+        Title="Payback View" Height="660" Width="500" DataContext="{Binding Path=TransactionModule, Source={StaticResource Locator}}"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Payment Transaction" HorizontalAlignment="Center" FontStyle="Normal" FontSize="25"></TextBlock>
+            <Border Width="450" Margin="5" BorderBrush="White" BorderThickness="2" Height="585">
+                <StackPanel Margin="5">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20,5,5,20">
+                        <TextBlock Text="Jewelry ID: " HorizontalAlignment="Center" FontSize="20" Margin="1,10,5,1"></TextBlock>
+                        <TextBox Margin="15,1,1,1" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Text="{Binding Path=InputJewelryID}" FontSize="20" Width="150"></TextBox>
+                    </StackPanel>
+                    <Button Content="Check" Width="135" FontSize="20" Margin="5" Command="{Binding Path=CheckLoanCommand}"></Button>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20,5,5,20">
+                        <TextBlock Text="Customer Name: " HorizontalAlignment="Center" FontSize="20" Margin="1,10,5,1"></TextBlock>
+                        <TextBlock Margin="18,10,1,1" HorizontalAlignment="Center" Text="{Binding Path=DisplayCustomerName}" FontSize="20" Width="210"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20,5,5,20">
+                        <TextBlock Text="Contact Number: " HorizontalAlignment="Center" FontSize="20" Margin="1,10,5,1"></TextBlock>
+                        <TextBlock Margin="15,10,1,1" HorizontalAlignment="Center" Text="{Binding Path=DisplayCustomerContactNumber}" FontSize="20" Width="210"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20,5,5,20">
+                        <TextBlock Text="Address: " HorizontalAlignment="Center" FontSize="20" Margin="1,10,5,1"></TextBlock>
+                        <TextBlock Margin="93,10,1,1" HorizontalAlignment="Center" Text="{Binding Path=DisplayCustomerAddress}" FontSize="20" Width="210"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20,5,5,20">
+                        <TextBlock Text="Full Value: " HorizontalAlignment="Center" FontSize="20" Margin="1,10,5,1"></TextBlock>
+                        <TextBlock Margin="78,10,1,1" HorizontalAlignment="Center" Text="{Binding Path=DisplayFullInterestValue}" FontSize="20" Width="210"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20,5,5,20">
+                        <TextBlock Text="Balance: " HorizontalAlignment="Center" FontSize="20" Margin="1,10,5,1"></TextBlock>
+                        <TextBlock Margin="98,10,1,1" HorizontalAlignment="Center" Text="{Binding Path=DisplayBalance}" FontSize="20" Width="210"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20,40,5,20">
+                        <TextBlock Text="Cash Payment: " HorizontalAlignment="Center" FontSize="20" Margin="1,10,5,1"></TextBlock>
+                        <TextBox Margin="15,1,1,1" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Text="{Binding Path=InputPayment}" FontSize="20" Width="150"></TextBox>
+                    </StackPanel>
+                    <Button Content="Pay" Width="135" FontSize="20" Margin="5" Command="{Binding Path=AddPaybackTransactionCommand}"></Button>
+
+                    
+                </StackPanel>
+
+            </Border>
+        </StackPanel>
+    </Grid>
+</Window>
